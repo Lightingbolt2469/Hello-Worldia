@@ -39,8 +39,19 @@ namespace HelloWorld
 	}
 }</pre></h3>
 }</pre></h3>
-	<h3>Bash : <pre>echo "Hello World"</pre></h3>
-	<h3>Powershell : <pre>echo "Hello World"</pre></h3>
+	<h3>- Bash : <pre>echo "Hello World"</pre></h3>
+	<h3>- Powershell : <pre>echo "Hello World"</pre></h3>
+	<h3>- Dart :<pre>
+void main() {
+  print('Hello World');
+}</pre></h3>
+	<h3>Go (Golang) :<pre>
+package main
+import "fmt"
+
+func main() {
+	fmt.Printf("Hello, World!")
+}</pre></h3>
     <h2>Low Level programming languages</h2>
     <h3>- C++ : <pre>
 #include &lt;iostream&gt;
@@ -54,7 +65,7 @@ int main() {
     printf("Hello World");
     return 0;
 }</pre><h3>
-	<h3>- Assembly Linux x86-64<pre>
+	<h3>- Assembly Linux x86-64 :<pre>
 section .data
     msg db "Hello World", 10      ; 10 is the newline character
 
@@ -74,7 +85,7 @@ _start:
     xor rdi, rdi        ; exit code 0
     syscall             ; tell the kernel to exit
 	</pre></h3>
-	<h3>- Assembly Windows x86-64<pre>
+	<h3>- Assembly Windows x86-64 :<pre>
 extrn GetStdHandle : proc
 extrn WriteFile : proc
 extrn ExitProcess : proc
@@ -107,7 +118,7 @@ main proc
     call ExitProcess    
 main endp
 end</pre></h3>
-	<h3>- Assembly ARM mobile<pre>
+	<h3>- Assembly ARM mobile :<pre>
 .global _start
 .align 2
 
@@ -130,7 +141,7 @@ msg: .ascii "Hello World\n"</pre></h3>
 01001000 01100101 01101100 01101100 01101111 00100000
 01010111 01101111 01110010 01101100 01100100
 	</pre></h3>
-	<h3>- Binary Linux x86-64 ELF Executable
+	<h3>- Binary Linux x86-64 ELF Executable :
    <pre>
 7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
 02 00 3e 00 01 00 00 00 78 00 40 00 00 00 00 00 
@@ -139,7 +150,7 @@ c6 a4 00 40 00 48 c7 c2 0b 00 00 00 0f 05 48 65
 6c 6c 6f 20 57 6f 72 6c 64 0a
    </pre></h3>
 
-   <h3>- Binary Windows x64 PE Instruction Payload<pre>
+   <h3>- Binary Windows x64 PE Instruction Payload :<pre>
 48 83 ec 28 48 c7 c1 f5 ff ff ff ff 15 00 00 00 
 00 48 89 c5 4c 8d 4c 24 20 48 89 c1 48 8d 15 15 
 00 00 00 41 b8 0b 00 00 00 ff 15 00 00 00 00 48 
