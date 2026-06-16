@@ -54,6 +54,79 @@ int main() {
     printf("Hello World");
     return 0;
 }</pre><h3>
+	<h3>- Assembly linux x86<pre>
+section .data
+    msg db "Hello World", 10      ; 10 is the newline character
+
+section .text
+    global _start
+
+_start:
+    ; Write the string to stdout (the screen)
+    mov rax, 1          ; system call number 1 is 'write'
+    mov rdi, 1          ; file descriptor 1 is stdout
+    mov rsi, msg        ; pointer to our string
+    mov rdx, 14         ; length of our string
+    syscall             ; tell the kernel to do the write
+
+    ; Exit the program cleanly
+    mov rax, 60         ; system call number 60 is 'exit'
+    xor rdi, rdi        ; exit code 0
+    syscall             ; tell the kernel to exit
+	</pre></h3>
+	<h3>- Assembly windows x86<pre>
+extrn GetStdHandle : proc
+extrn WriteFile : proc
+extrn ExitProcess : proc
+
+.data
+msg db 'Hello World', 13, 10    ; 13, 10 is Carriage Return + Line Feed for Windows
+msgLen_bytes equ $ - msg
+written dq 0
+
+.code
+main proc
+    ; Allocate 40 bytes of shadow space (Windows security requirement)
+    sub rsp, 40          
+
+    ; Get the handle for stdout (-11)
+    mov ecx, -11        
+    call GetStdHandle    
+    mov rbp, rax         ; Save the handle in rbp
+
+    ; Write to the console: WriteFile(handle, msg, len, &written, 0)
+    mov rcx, rbp         ; 1st argument: Device handle
+    lea rdx, msg         ; 2nd argument: Pointer to our string
+    mov r8d, msgLen_bytes; 3rd argument: Length of string
+    lea r9, written      ; 4th argument: Pointer to written bytes variable
+    mov qword ptr [rsp+32], 0 ; 5th argument: 0 (unused)
+    call WriteFile       
+
+    ; Exit the app cleanly: ExitProcess(0)
+    xor ecx, ecx        
+    call ExitProcess    
+main endp
+end</pre></h3>
+	<h3>- Assembly ARM mobile<pre>
+.global _start
+.align 2
+
+_start:
+    ; Write the string to stdout
+    mov x0, #1          ; File descriptor 1 is stdout
+    ldr x1, =msg        ; Load the address of our string into x1
+    mov x2, #14         ; Length of the string
+    mov x8, #64         ; Linux system call number 64 is 'write'
+    svc #0              ; Call the kernel to execute
+
+    ; Exit the program cleanly
+    mov x0, #0          ; Return exit code 0
+    mov x8, #93         ; Linux system call number 93 is 'exit'
+    svc #0              ; Call the kernel to execute
+
+.data
+msg: .ascii "Hello World\n"</pre></h3>
+		
     <h3>-------------------------</h3>
     <h4>About Page; <br><br>Owner : Vihaan GS<br>Contributers : Vihaan GS</h4>
     <a href=https://github.com/Lightingbolt2469/Hello-Worldia/>Github link</a>
