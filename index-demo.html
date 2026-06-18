@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello Worldia | The Programmer's Way</title>
+  <style>
+    /* Modern Slate Dark Theme Styling */
+    :root {
+      --bg-main: #0f172a;       /* Deep slate navy canvas */
+      --bg-card: #1e293b;       /* Slightly lighter card background */
+      --text-primary: #f8fafc;  /* Clean off-white */
+      --text-muted: #94a3b8;    /* Muted grey for subtext */
+      --accent-blue: #38bdf8;   /* High-tech glow blue */
+      --accent-green: #34d399;  /* Mint glow for low-level */
+      --code-bg: #0b0f19;       /* Deep black-blue terminal box */
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+    }
+
+    /* Container setup to prevent stretching on huge monitors */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: var(--accent-blue);
+      margin: 0 0 10px 0;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      border-bottom: 2px solid #334155;
+      padding-bottom: 10px;
+      margin: 40px 0 20px 0;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .high-level h2 { color: var(--accent-blue); }
+    .low-level h2 { color: var(--accent-green); }
+
+    /* The responsive grid layout system */
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 20px;
+    }
+
+    /* Code cards */
+    .lang-card {
+      background-color: var(--bg-card);
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    }
+
+    .lang-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Terminal syntax boxes */
+    pre {
+      background-color: var(--code-bg);
+      border-radius: 8px;
+      padding: 14px;
+      margin: 0;
+      overflow-x: auto;
+      font-family: 'Fira Code', 'Courier New', Courier, monospace;
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      border: 1px solid #1e293b;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 30px;
+      border-top: 1px solid #334155;
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Hello Worldia</h1>
+      <p>Where you can say "Hello World" in almost every programming language</p>
+    </header>
+
+    <!-- HIGH LEVEL SECTION -->
+    <section class="high-level">
+      <h2>High-Level Languages</h2>
+      <div class="lang-grid">
+        
+        <div class="lang-card">
+          <div class="lang-title">Python</div>
+          <pre>print("Hello World")</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">Lua</div>
+          <pre>print("Hello World")</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">JavaScript</div>
+          <pre>console.log("Hello World")</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">TypeScript</div>
+          <pre>console.log("Hello World");</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">Rust</div>
+          <pre>fn main() {
+    println!("Hello World!");
+}</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">Ruby</div>
+          <pre>puts "Hello World"</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">Java</div>
+          <pre>import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">C#</div>
+          <pre>using System;
+
+namespace HelloWorld {
+    class Program {
+        static void Main() {
+            Console.WriteLine("Hello World");
+        }
+    }
+}</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">Bash</div>
+          <pre>echo "Hello World"</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">PowerShell</div>
+          <pre>Write-Output "Hello World"</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">Dart</div>
+          <pre>void main() {
+  print('Hello World');
+}</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">Go (Golang)</div>
+          <pre>package main
+import "fmt"
+
+func main() {
+    fmt.Println("Hello World")
+}</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">C++</div>
+          <pre>#include &lt;iostream&gt;
+int main() {
+    std::cout << "Hello World";
+    return 0;
+}</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">Swift</div>
+          <pre>print("Hello World")</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">Kotlin</div>
+          <pre>fun main() {
+    println("Hello World")
+}</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">SQL</div>
+          <pre>SELECT 'Hello World' AS message;</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">R</div>
+          <pre>print("Hello, World!")</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">F#</div>
+          <pre>printfn "Hello, World!"</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LOW LEVEL SECTION -->
+    <section class="low-level">
+      <h2>Low-Level & Hardware Layers</h2>
+      <div class="lang-grid">
+
+        <div class="lang-card">
+          <div class="lang-title">C</div>
+          <pre>#include &lt;stdio.h&gt; 
+int main() {
+    printf("Hello World");
+    return 0;
+}</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">Assembly Linux x86-64</div>
+          <pre>section .data
+    msg db "Hello World", 10 
+
+section .text
+    global _start
+
+_start:
+    mov rax, 1          ; write syscall
+    mov rdi, 1          ; stdout
+    mov rsi, msg        ; string pointer
+    mov rdx, 14         ; string length
+    syscall 
+
+    mov rax, 60         ; exit syscall
+    xor rdi, rdi        ; exit code 0
+    syscall</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">Assembly Windows x86-64</div>
+          <pre>extrn GetStdHandle : proc
+extrn WriteFile : proc
+extrn ExitProcess : proc
+
+.data
+msg db 'Hello World', 13, 10
+msgLen_bytes equ $ - msg
+written dq 0
+
+.code
+main proc
+    sub rsp, 40          ; Shadow space
+    mov ecx, -11         ; stdout handle
+    call GetStdHandle    
+    mov rbp, rax
+
+    mov rcx, rbp         ; handle
+    lea rdx, msg         ; buffer
+    mov r8d, msgLen_bytes; len
+    lea r9, written      ; var pointer
+    mov qword ptr [rsp+32], 0
+    call WriteFile       
+
+    xor ecx, ecx         ; exit 0
+    call ExitProcess    
+main endp
+end</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">Assembly ARM Mobile</div>
+          <pre>.global _start
+.align 2
+
+_start:
+    mov x0, #1          ; stdout
+    ldr x1, =msg        ; string addr
+    mov x2, #14         ; len
+    mov x8, #64         ; write syscall
+    svc #0 
+
+    mov x0, #0          ; exit 0
+    mov x8, #93         ; exit syscall
+    svc #0 
+
+.data
+msg: .ascii "Hello World\n"</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">Binary (Raw Text ASCII Data)</div>
+          <pre>01001000 01100101 01101100 01101100 01101111 00100000
+01010111 01101111 01110010 01101100 01100100</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">Binary Linux x86-64 ELF Executable</div>
+          <pre>7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+02 00 3e 00 01 00 00 00 78 00 40 00 00 00 00 00 
+48 c7 c0 01 00 00 00 48 c7 c7 01 00 00 00 48 c7 
+c6 a4 00 40 00 48 c7 c2 0b 00 00 00 0f 05 48 65 
+6c 6c 6f 20 57 6f 72 6c 64 0a</pre>
+        </div>
+
+        <div class="lang-card">
+          <div class="lang-title">Binary Windows x64 PE Payload</div>
+          <pre>48 83 ec 28 48 c7 c1 f5 ff ff ff ff 15 00 00 00 
+00 48 89 c5 4c 8d 4c 24 20 48 89 c1 48 8d 15 15 
+00 00 00 41 b8 0b 00 00 00 ff 15 00 00 00 00 48 
+65 6c 6c 6f 20 57 6f 72 6c 64 0d 0a</pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER META LAYER -->
+    <footer>
+      <p>Owner &amp; Contributor: Vihaan GS</p>
+      <p><a href="https://github.com/Lightingbolt2469/Hello-Worldia/" target="_blank">View GitHub Repository</a></p>
+      <p>Thanks for visiting :)</p>
+    </footer>
+  </div>
+
+</body>
+</html>
